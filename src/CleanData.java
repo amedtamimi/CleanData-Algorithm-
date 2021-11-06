@@ -19,7 +19,6 @@ public class CleanData {
             arr.add(Reader.nextInt());
         }
         if(n%2==0){
-
             System.out.println("How many split you want?");
             for ( int i=2; i <n ; i++) {
                 if(n%i==0){
