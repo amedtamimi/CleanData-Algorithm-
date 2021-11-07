@@ -1,9 +1,6 @@
 import java.io.*;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.StringTokenizer;
+import java.util.*;
 
 public class CleanData {
     public static void main(String[] args) throws Exception {
@@ -40,7 +37,7 @@ public class CleanData {
             }
             System.out.println(Arrays.toString(d));
             System.out.println("Chose the method");
-            System.out.println("1-Mean \n2-Median \nChose 1 oR 2");
+            System.out.println("1-Mean \n2-Median \n3-highOrLow algo \nChose 1 oR 2 oR 3");
             int algo = Reader.nextInt();
             switch (algo){
                 case 1: {
@@ -58,6 +55,14 @@ public class CleanData {
                         int val = median(d[i]);
                         for ( int j =0; j <n/spl ; j++) {
                             d[i].set(j,val);
+                        }
+                    }
+                    System.out.println(Arrays.toString(d));
+                }break;
+                case 3:{
+                    for (int i = 0; i <spl ; i++) {
+                        for ( int j =0; j <n/spl ; j++) {
+                           highAndLow(d[i]);
                         }
                     }
                     System.out.println(Arrays.toString(d));
@@ -100,6 +105,20 @@ public class CleanData {
             mean = first;
         }
         return mean;
+    }
+    static List<Integer> highAndLow(List<Integer> arr){
+        Collections.sort(arr);
+        int low = arr.get(0);
+        int high = arr.get(arr.size()-1);
+        for (int i = 0; i <arr.size() ; i++) {
+            if(Math.abs(arr.get(i)-low)<Math.abs(arr.get(i)-high)){
+                arr.set(i,low);
+            }
+            else{
+                arr.set(i,high);
+            }
+        }
+        return arr;
     }
 }
 class Reader {
