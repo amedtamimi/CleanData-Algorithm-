@@ -106,7 +106,7 @@ public class CleanData {
         }
         return mean;
     }
-    static List<Integer> highAndLow(List<Integer> arr){
+    static void highAndLow(List<Integer> arr){
         Collections.sort(arr);
         int low = arr.get(0);
         int high = arr.get(arr.size()-1);
@@ -118,7 +118,6 @@ public class CleanData {
                 arr.set(i,high);
             }
         }
-        return arr;
     }
 }
 class Reader {
