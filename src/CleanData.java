@@ -15,8 +15,8 @@ public class CleanData {
         for (int i = 0; i <n ; i++) {
             arr.add(Reader.nextInt());
         }
+        System.out.println("How many split you want?");
         if(n%2==0){
-            System.out.println("How many split you want?");
             for ( int i=2; i <n ; i++) {
                 if(n%i==0){
                     sp.add(i);
@@ -81,7 +81,6 @@ public class CleanData {
             System.out.println(result);
         }
         else{
-            System.out.println("How many split you want?");
             for ( int i=1; i <n ; i++) {
                 if(n%i==0){
                     sp.add(i);
