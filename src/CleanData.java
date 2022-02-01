@@ -6,14 +6,14 @@ public class CleanData {
     public static void main(String[] args) throws Exception {
         StringBuilder out = new StringBuilder();
         StringTokenizer tk;
-        Reader.init(System.in);
+        Rederr.init(System.in);
         System.out.println("Please Enter the size of list");
-        int n = Reader.nextInt();
+        int n = Rederr.nextInt();
         List<Integer> arr = new ArrayList<>();
         List<Integer> sp = new ArrayList<>();
         System.out.println("Please Enter the data in list");
         for (int i = 0; i <n ; i++) {
-            arr.add(Reader.nextInt());
+            arr.add(Rederr.nextInt());
         }
         System.out.println("How many split you want?");
         if(n%2==0){
@@ -23,7 +23,7 @@ public class CleanData {
                 }
             }
             System.out.println(sp);
-            int spl = Reader.nextInt();
+            int spl = Rederr.nextInt();
             ArrayList<Integer>[] d = (ArrayList<Integer>[]) new ArrayList[spl];
             for (int i = 0; i <spl ; i++) {
                 d[i] = new ArrayList<>();
@@ -38,7 +38,7 @@ public class CleanData {
             System.out.println(Arrays.toString(d));
             System.out.println("Chose the method");
             System.out.println("1-Mean \n2-Median \n3-highOrLow algo \nChose 1 oR 2 oR 3");
-            int algo = Reader.nextInt();
+            int algo = Rederr.nextInt();
             switch (algo){
                 case 1: {
                     for (int i = 0; i <spl ; i++) {
@@ -87,7 +87,7 @@ public class CleanData {
                 }
             }
             System.out.println(sp);
-            int spl = Reader.nextInt();
+            int spl = Rederr.nextInt();
             ArrayList<Integer>[] d = (ArrayList<Integer>[]) new ArrayList[spl];
             for (int i = 0; i <spl ; i++) {
                 d[i] = new ArrayList<>();
@@ -102,7 +102,7 @@ public class CleanData {
             System.out.println(Arrays.toString(d));
             System.out.println("Chose the method");
             System.out.println("1-Mean \n2-Median \n3-highOrLow algo \nChose 1 oR 2 oR 3");
-            int algo = Reader.nextInt();
+            int algo = Rederr.nextInt();
             switch (algo){
                 case 1: {
                     for (int i = 0; i <spl ; i++) {
@@ -183,39 +183,5 @@ public class CleanData {
                 arr.set(i,high);
             }
         }
-    }
-}
-class Reader {
-    static BufferedReader reader;
-    static StringTokenizer tokenizer;
-    static void init(InputStream input) throws UnsupportedEncodingException {
-        reader = new BufferedReader(
-                new InputStreamReader(input, StandardCharsets.UTF_8));
-        tokenizer = new StringTokenizer("");
-    }
-
-    static String next() throws IOException {
-        while (!tokenizer.hasMoreTokens()) {
-            //TODO add check for eof if necessary
-            tokenizer = new StringTokenizer(
-                    reader.readLine());
-        }
-        return tokenizer.nextToken();
-    }
-
-    static String nextLine() throws IOException {
-        return reader.readLine();
-    }
-
-    static int nextInt() throws IOException {
-        return Integer.parseInt(next());
-    }
-
-    static double nextDouble() throws IOException {
-        return Double.parseDouble(next());
-    }
-
-    static long nextLong() throws IOException {
-        return Long.parseLong(next());
     }
 }
